@@ -1,0 +1,68 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+    title Find a tutor
+    script(src="../javascripts/fuse.js")
+    script(src="../javascripts/searchbar.js")
+    script(src="http://code.jquery.com/jquery-1.11.0.min.js")
+    script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js")
+    link(rel="stylesheet", href="/stylesheets/bootstrap.css", type="text/css", media="screen")
+    link(rel="stylesheet", href="/stylesheets/layout.css", type="text/css", media="screen")
+    link(rel="stylesheet", href="/stylesheets/find_tutor.css", type="text/css", media="screen")
+    link(href="https://fonts.googleapis.com/css?family=Roboto:400,700,900|Josefin+Sans:400,700|Quicksand:400,700", rel="stylesheet", type="text/css")
+  body#body
+    // -Section------
+    #section
+      #filter-blue
+        nav.navbar.navbar-inverse
+          .container-fluid
+            // Brand and toggle get grouped for better mobile display
+            .navbar-header
+              button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1", aria-expanded="false")
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              #title
+                i Please
+                | TutorMe
+            // Collect the nav links, forms, and other content for toggling
+            #bs-example-navbar-collapse-1.collapse.navbar-collapse
+              ul.nav.navbar-nav
+                li.active
+                  a(href="#")
+                    | Find a tutor
+                    span.sr-only (current)
+                li
+                  a(href="/maptwo") Be a tutor
+              ul.nav.navbar-nav.navbar-right
+                li
+                  a(href="/profile") Profile
+                li
+                  a(href="/signout") Log Out
+            // /.navbar-collapse
+          // /.container-fluid
+        // -END NAV------
+        script.
+          var results = []
+          var subjects = [{
+            "name": 'Computer Science'},{"name": 'French'},{"name": 'Philosophy'},{"name": 'Environmental Science'},{ "name": 'Spanish'},{"name": 'Biology'},{"name": 'Chemistry'},{"name": 'Mathematics'},{"name": 'Business'},{"name": 'Psychology'},{"name": 'Linguistics'},{"name": 'English'},{"name": 'Political Science'},{"name": 'United States History'},{"name": 'World History'},{"name": 'Electrical Engineering'},{"name": 'Mechanical Engineering'},{"name": 'Chemical Engineering'},{"name": 'Computer Engineering'},{"name": 'Materials Science'},{"name": 'Civil Engineering'},{"name": 'Czech'},{"name": 'Chinese'},{"name": 'Ethics'},{"name": 'Theology'},{"name": 'Physics'},{"name": 'Sociology'},{"name": 'Economics'},{"name": 'Art History'},{"name": 'Environmental Engineering'},{"name": 'German'},{"name": 'Peace and Conflict Studies'},{"name": 'Ethnic Studies'},{"name": 'Cognitive Science'},{"name": 'Neuroscience'},{"name": 'Legal Studies'},{"name": 'Biomedical Engineering'},{"name": 'Astronomy'},{"name": 'Actuarial Science'
+          }];
+          function sear(){
+            var f = new Fuse(subjects, options);
+            str = document.getElementById("searchbar").value;
+            results = f.search(str);
+            document.getElementById("searchres").value = results[0];
+          }
+        form#search(name='search', method='post', action='/searching')
+          #search-section
+            #search-group.input-group
+              input#searchres(name = "results", type = "hidden")
+              input#searchbar.form-control(name = "text",type='text', placeholder='Search topics', onkeydown="sear()", onkeyup="sub(event)")
+              span.input-group-btn
+                button#but.btn.btn-success(type="submit") Search
+              
+      block map
