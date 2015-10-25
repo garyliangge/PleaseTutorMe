@@ -1,0 +1,130 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+    title Profile
+    script(src="http://code.jquery.com/jquery-1.11.0.min.js")
+    script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
+    script(type="text/javascript", src="js/bootstrap.min.js")
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js")
+    script(src="javascripts/jquery.js")
+    script(src="selectize/js/standalone/selectize.min.js")
+    link(rel="stylesheet", href="/stylesheets/bootstrap.min.css", type="text/css", media="screen")
+    link(rel="stylesheet", href="/stylesheets/layout.css", type="text/css", media="screen")
+    link(rel="stylesheet", href="/stylesheets/profile.css", type="text/css", media="screen")
+    link(rel="stylesheet", href="selectize/css/selectize.css", type = "text/css", media="all")
+    link(href="https://fonts.googleapis.com/css?family=Roboto:400,700,900|Josefin+Sans:400,700|Quicksand:400,700", rel="stylesheet", type="text/css")
+  body#body
+    // -Section------
+    #section
+      #filter-blue
+        nav.navbar.navbar-inverse
+          .container-fluid
+            // Brand and toggle get grouped for better mobile display
+            .navbar-header
+              button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1", aria-expanded="false")
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              #title
+                i Please
+                | TutorMe
+            // Collect the nav links, forms, and other content for toggling
+            #bs-example-navbar-collapse-1.collapse.navbar-collapse
+              ul.nav.navbar-nav
+                li
+                  a(href="/map") Find a tutor
+                li
+                  a(href="/maptwo") Be a tutor
+              ul.nav.navbar-nav.navbar-right
+                li.active
+                  a(href="#")
+                    | Profile
+                    span.sr-only (current)
+                li
+                  a(href="/index") Log Out
+            // /.navbar-collapse
+          // /.container-fluid
+        // -END NAV------
+        form#profile(name="profile", method="post", action="/changeprofile")
+          #forms
+            fieldset(disabled="")
+              .form-group
+                label(for="name", style="color: white;") Name
+                input#name.form-control(type="text", value="#{name}")
+            .form-group
+              label(for="passwordPrompt", style="color: white;") Year
+              select.form-control
+                option High School
+                option Freshman
+                option Sophomore
+                option Junior
+                option Senior
+                option Graduate
+            .form-group
+              label(for="subjects", style="color: white;") What can you teach? (leave blank if you only seek tutoring)
+              .demo
+                #search.input-group
+                  .control-group
+                    select#searchbar.demo-default(name="topics[]", multiple="", placeholder="Search topics")
+                      option(value="compsci") Computer Science
+                      option(value="french") French
+                      option(value="philosophy") Philosophy
+                      option(value="envirosci") Environmental Science
+                      option(value="spanish") Spanish
+                      option(value="bio") Biology
+                      option(value="chem") Chemistry
+                      option(value="math") Mathematics
+                      option(value="business") Business
+                      option(value="psych") Psychology
+                      option(value="ling") Linguistics
+                      option(value="english") English
+                      option(value="polysci") Political Science
+                      option(value="ushist") United States History
+                      option(value="worldhist") World History
+                      option(value="elec") Electrical Engineering
+                      option(value="mech") Mechanical Engineering
+                      option(value="chemeng") Chemical Engineering
+                      option(value="compeng") Computer Engineering
+                      option(value="matsci") Materials Science
+                      option(value="civil") Civil Engineering
+                      option(value="czech") Czech
+                      option(value="chinese") Chinese
+                      option(value="ethics") Ethics
+                      option(value="theo") Theology
+                      option(value="physics") Physics
+                      option(value="soc") Sociology
+                      option(value="econ") Economics
+                      option(value="arthist") Art History
+                      option(value="enviroeng") Environmental Engineering
+                      option(value="german") German
+                      option(value="peace") Peace and Conflict Studies
+                      option(value="ethnic") Ethnic Studies
+                      option(value="cogsci") Cognitive Science
+                      option(value="neuro") Neuroscience
+                      option(value="law") Legal Studies
+                      option(value="bioeng") Biomedical Engineering
+                      option(value="astro") Astronomy
+                      option(value="actuarial") Actuarial Science
+                script.
+                  $('#searchbar').selectize({
+                  persist: false,
+                  createOnBlur: true,
+                  create: true
+                  });
+            .form-group
+              label(for="phone", style="color: white;") Phone number
+              input#phone.form-control(type="text", value="#{phone}")
+            .form-group
+              label(for="text", style="color: white;") Email
+              input#email.form-control(type="email", value="#{email}")
+            .form-group
+              label(for="passwordPrompt", style="color: white;") Password
+              input#password.form-control(type="password", placeholder="Password")
+          #buttons(style="color: white;")
+            a(href="/map")
+              button#signup.btn.btn-primary.btn-lg(type="submit") Save
+            a(href="/map")
+              button#login.btn.btn-danger.btn-lg(type="button") Cancel

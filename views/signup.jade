@@ -1,0 +1,107 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+    title Sign Up
+    // link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico'
+    link(rel="stylesheet", href="/stylesheets/bootstrap.css", type="text/css", media="screen")
+    link(rel="stylesheet", href="/stylesheets/layout.css", type="text/css", media="screen")
+    link(rel="stylesheet", href="/stylesheets/signup.css", type="text/css", media="screen")
+    link(rel="stylesheet", href="selectize/css/selectize.css", type = "text/css", media="all")
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js")
+    script(src="javascripts/jquery.js")
+    script(src="selectize/js/standalone/selectize.min.js")
+    // script src="javascripts/main.js"></script
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+    link(href="https://fonts.googleapis.com/css?family=Roboto:400,700,900|Josefin+Sans:400,700|Quicksand:400,700", rel="stylesheet", type="text/css")
+  body#body
+    // -Section------
+    #section
+      #filter-blue
+        #title
+          | Sign Up
+        form#signUp(name="signup", method="post", action="/signup")
+          #forms
+            .form-group
+              label(for="name", style="color: white;") Name*
+              input#name.form-control(type="text", placeholder="Name", name="name")
+            .form-group
+              label(for="passwordPrompt", style="color: white;") Year*
+              select#year(name="year").form-control
+                option High School
+                option Freshman
+                option Sophomore
+                option Junior
+                option Senior
+                option Graduate
+            .form-group
+              label(for="subjects", style="color: white;") What can you teach? (leave blank if you only seek tutoring)
+              .demo
+                #search.input-group
+                  .control-group
+                    select#searchbar.demo-default(name="topics", multiple="", placeholder="Search topics")
+                      option(value="Computer Science") Computer Science
+                      option(value="French") French
+                      option(value="Philosophy") Philosophy
+                      option(value="Environmental Science") Environmental Science
+                      option(value="Spanish") Spanish
+                      option(value="Biology") Biology
+                      option(value="Chemistry") Chemistry
+                      option(value="Mathematics") Mathematics
+                      option(value="Business") Business
+                      option(value="Psychology") Psychology
+                      option(value="Linguistics") Linguistics
+                      option(value="English") English
+                      option(value="Earth Science") Earth Science
+                      option(value="Political Science") Political Science
+                      option(value="United States History") United States History
+                      option(value="World History") World History
+                      option(value="Electrical Engineering") Electrical Engineering
+                      option(value="Mechanical Engineering") Mechanical Engineering
+                      option(value="Chemical Engineering") Chemical Engineering
+                      option(value="Computer Engineering") Computer Engineering
+                      option(value="Materials Science") Materials Science
+                      option(value="Civil Engineering") Civil Engineering
+                      option(value="Czech") Czech
+                      option(value="Chinese") Chinese
+                      option(value="Latin") Latin
+                      option(value="Ethics") Ethics
+                      option(value="Women's Studies") Women's Studies
+                      option(value="Public Health") Public Health
+                      option(value="Theology") Theology
+                      option(value="Physics") Physics
+                      option(value="Sociology") Sociology
+                      option(value="Economics") Economics
+                      option(value="Art History") Art History
+                      option(value="Environmental Engineering") Environmental Engineering
+                      option(value="German") German
+                      option(value="Peace and Conflict Studies") Peace and Conflict Studies
+                      option(value="Ethnic Studies") Ethnic Studies
+                      option(value="Cognitive Science") Cognitive Science
+                      option(value="Neuroscience") Neuroscience
+                      option(value="Legal Studies") Legal Studies
+                      option(value="Biomedical Engineering") Biomedical Engineering
+                      option(value="Astronomy") Astronomy
+                      option(value="Actuarial Science") Actuarial Science
+                script.
+                  $('#searchbar').selectize({
+                  persist: false,
+                  createOnBlur: true,
+                  create: true
+                  });
+            .form-group
+              label(for="phone", style="color: white;") Phone
+              input#phone.form-control(type="text", placeholder="1234567890", name="phone")
+            .form-group
+              label(for="emailPrompt", style="color: white;") Email*
+              input#username.form-control(type="email", placeholder="Email", name="username")
+            .form-group
+              label(for="passwordPrompt", style="color: white;") Password*
+              input#password.form-control(type="password", placeholder="Password", name="password")
+          #buttons(style="color: white;")
+            a(href="/")
+              button#signup.btn.btn-success.btn-lg(type="submit") Sign Up
+            a(href="/")
+              button#login.btn.btn-danger.btn-lg(type="button") Cancel

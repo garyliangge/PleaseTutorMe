@@ -1,0 +1,9 @@
+div#banner{
+  min-height: 8vh;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Quicksand', sans-serif;
+}
