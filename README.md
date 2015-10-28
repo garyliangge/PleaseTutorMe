@@ -3,6 +3,7 @@
 
 ## Startup Guide
 
+
 Visit us on our webpage at http://pleasetutor.me, or clone the repository yourself, using<code> git clone https://github.com/garyliangge/PleaseTutorMe.git</code>. Once cloned, install node.js onto your computer, and using your terminal emulator of choice, start the application using <code>npm start</code>. The website is accessible by entering <code>localhost:3000</code> into your favorite browser.
 
 
