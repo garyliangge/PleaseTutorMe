@@ -3,13 +3,14 @@
 
 ## Startup Guide
 
+
 Visit us on our webpage at http://pleasetutor.me, or clone the repository yourself, using<code> git clone https://github.com/garyliangge/PleaseTutorMe.git</code>. Once cloned, install node.js onto your computer, and using your terminal emulator of choice, start the application using <code>npm start</code>. The website is accessible by entering <code>localhost:3000</code> into your favorite browser.
 
 
 ## Inspiration
 
 
-College is overflowing with opportunities to collaborate. It's the camaraderie, the us-versus-them mentality that keeps our heads above water. But countless homework parties and office hours have made scheduling collaboration complex at best and impossible at worst. Our frustration at being too busy to attend scheduled collaboration sessions prompted us to create an application that enabled us to find nearby help, fast.
+College is overflowing with opportunities to collaborate. It's the camaraderie, the us-versus-them mentality that keeps our heads above water. But countless homework parties and office hours have made scheduling collaboration complex at best and impossible at worst. Our frustration at being too busy to attend scheduled collaboration sessions prompted us to create an application that enabled us to find nearby help quickly.
 
 
 ## What it does
